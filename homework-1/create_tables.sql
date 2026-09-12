@@ -1,7 +1,3 @@
-DROP TABLE IF EXISTS orders CASCADE;
-DROP TABLE IF EXISTS employees CASCADE;
-DROP TABLE IF EXISTS customers CASCADE;
-
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     first_name VARCHAR(50),
