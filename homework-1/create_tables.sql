@@ -4,8 +4,7 @@ CREATE TABLE employees (
     last_name VARCHAR(50),
     title VARCHAR(100),
     birth_date DATE,
-    notes TEXT,
-    photo VARCHAR(255)
+    notes TEXT
 );
 
 CREATE TABLE customers (
