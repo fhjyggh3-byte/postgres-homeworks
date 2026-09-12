@@ -1,23 +1,27 @@
+DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS employees CASCADE;
+DROP TABLE IF EXISTS customers CASCADE;
+
 CREATE TABLE employees (
-    employee_id SERIAL PRIMARY KEY,
+    employee_id INT PRIMARY KEY,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
+    title VARCHAR(100),
     birth_date DATE,
-    notes TEXT
+    notes TEXT,
+    photo VARCHAR(255)
 );
 
 CREATE TABLE customers (
     customer_id VARCHAR(10) PRIMARY KEY,
     company_name VARCHAR(100),
-    contact_name VARCHAR(100),
-    city VARCHAR(50),
-    country VARCHAR(50)
+    contact_name VARCHAR(100)
 );
 
 CREATE TABLE orders (
-    order_id SERIAL PRIMARY KEY,
+    order_id INT PRIMARY KEY,
     customer_id VARCHAR(10) REFERENCES customers(customer_id),
     employee_id INT REFERENCES employees(employee_id),
     order_date DATE,
-    amount NUMERIC(10, 2)
-);-- SQL-команды для создания таблиц
+    ship_city VARCHAR(50)
+);
